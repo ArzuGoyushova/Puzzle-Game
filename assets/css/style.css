@@ -36,18 +36,33 @@ img {
 }
 
 .drop-box {
-    width: 400px;
-    height: 400px;
+    width: 362px;
+    height: 362px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid black;
+    border: 1px solid black;
     justify-content: space-between;
     align-items: center;
 }
 [class*=drop-img]{
     border: 1px solid black;
-    width: 132px;
-    height: 132px;
+    width: 120px;
+    height: 120px;
     display: grid;
     place-items: center;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 100px;
+    height:40px;
+    border-radius: 12px;
+    background-color: orange;
+    font-size:18px;
+    margin-bottom:10px;
+}
+#nextLevel{
+    display: none;
 }

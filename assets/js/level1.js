@@ -1,33 +1,41 @@
 let boxes = document.querySelectorAll(".box");
 let dragElements = document.querySelectorAll("img");
-
+let checkBtn = document.getElementById("checkButton");
 
 boxes.forEach(box => {
-    box.ondragover = function(e){
+    box.ondragover = function (e) {
         e.preventDefault();
     }
     box.ondrop = function () {
-        dragElements.forEach(drag=>{
-            drag.ondragend = function (e){
+        dragElements.forEach(drag => {
+            drag.ondragend = function (e) {
+                box.style.border = "none";
+                box.innerHTML = "";
                 box.append(e.target);
-                
             }
         })
-        
+
     }
-    })
+})
 
-    
-// function allowDrop(ev) {
-//     ev.preventDefault();
-// }
+for (let i = 1; i <= 9; i++) {
+    document.querySelector(`.drop-img${i}`).innerHTML = `${i}`;
+    document.querySelector(`.drop-img${i}`).style.fontSize = "24px";
+}
 
-// function drag(ev) {
-//     ev.dataTransfer.setData("text", ev.target.id);
-// }
+checkBtn.onclick = function () {
+    let count = 0;
+    for (let i = 1; i <= 9; i++) {
+        if (document.querySelector(`.drop-img${i}`).contains(document.querySelector(`#img${i}`))) {
+            count++;
+        }
+    }
+    if (count == 9) {
+        alert("you won");
+        document.getElementById("nextLevel").style.display = "block";
 
-// function drop(ev) {
-//     ev.preventDefault();
-//     var data = ev.dataTransfer.getData("text");
-//     ev.target.appendChild(document.getElementById(data));
-// }
+    } else {
+        alert("boo boo");
+        window.location.reload();
+    }
+}
