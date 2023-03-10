@@ -14,8 +14,13 @@ boxes.forEach(box => {
                 box.append(e.target);
             }
         })
-
+        
     }
+    box.ondragend = function () {
+                box.style.border = "1px solid black";
+                box.innerHTML = "?";
+            }
+        
 })
 
 for (let i = 1; i <= 9; i++) {
