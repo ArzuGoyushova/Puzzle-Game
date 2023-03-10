@@ -51,6 +51,13 @@ img {
     display: grid;
     place-items: center;
 }
+/* [class*=drag-img]{
+    border: 1px solid black;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-items: center;
+} */
 .buttons{
     display: flex;
     flex-direction: column;
